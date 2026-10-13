@@ -14,7 +14,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
 </style>
 
-<link rel="stylesheet" id="formidable-css" href="/wp-content/plugins/formidable/css/formidableforms.css?ver=9151637" media="all">
 <style id="wp-block-site-logo-inline-css">
 .wp-block-site-logo{box-sizing:border-box;line-height:0}.wp-block-site-logo a{display:inline-block;line-height:0}.wp-block-site-logo.is-default-size img{height:auto;width:120px}.wp-block-site-logo img{height:auto;max-width:100%}.wp-block-site-logo a,.wp-block-site-logo img{border-radius:inherit}.wp-block-site-logo.aligncenter{margin-left:auto;margin-right:auto;text-align:center}:root :where(.wp-block-site-logo.is-style-rounded){border-radius:9999px}
 /*# sourceURL=/wp-includes/blocks/site-logo/style.min.css */
@@ -684,17 +683,37 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Reemplaza los enlaces internos mailto
+    // 1. Corrección quirúrgica de textos y enlaces mailto sin romper el formulario
     document.querySelectorAll('a').forEach(function(link) {
       if (link.href && link.href.includes('contacto@macpcclinic.com')) {
         link.href = link.href.replace('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
       }
+      if (link.textContent && link.textContent.includes('contacto@macpcclinic.com')) {
+        link.textContent = link.textContent.replace('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
+      }
     });
-    // Reemplaza el texto visual en la pantalla
-    document.body.innerHTML = document.body.innerHTML.replaceAll('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
+
+    // Cambia cualquier otro texto suelto en el pie de página
+    var infoElements = document.querySelectorAll('p, span, div, td');
+    infoElements.forEach(function(el) {
+      if (el.children.length === 0 && el.textContent.includes('contacto@macpcclinic.com')) {
+        el.textContent = el.textContent.replace('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
+      }
+    });
+
+    // 2. Blindaje total contra el Error 405 (Forzar envío directo a Web3Forms)
+    var miFormulario = document.querySelector('form');
+    if (miFormulario) {
+      // Nos aseguramos de que apunte directamente a la API externa
+      miFormulario.setAttribute('action', 'https://web3forms.com');
+      miFormulario.setAttribute('method', 'POST');
+      
+      miFormulario.addEventListener('submit', function(e) {
+        // Permitimos el envío normal hacia la URL externa configurada arriba
+        e.stopPropagation();
+      });
+    }
   });
 </script>
-</html><!-- Page cached by LiteSpeed Cache 7.9.1 on 2026-10-13 13:45:51 -->
-
 
 </html><!-- Page cached by LiteSpeed Cache 7.9.1 on 2026-10-13 13:45:51 -->
