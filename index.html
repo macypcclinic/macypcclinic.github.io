@@ -680,4 +680,21 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 </body>
+... (todo el código de tu sitio sigue hacia arriba)
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Reemplaza los enlaces internos mailto
+    document.querySelectorAll('a').forEach(function(link) {
+      if (link.href && link.href.includes('contacto@macpcclinic.com')) {
+        link.href = link.href.replace('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
+      }
+    });
+    // Reemplaza el texto visual en la pantalla
+    document.body.innerHTML = document.body.innerHTML.replaceAll('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
+  });
+</script>
+</html><!-- Page cached by LiteSpeed Cache 7.9.1 on 2026-10-13 13:45:51 -->
+
+
 </html><!-- Page cached by LiteSpeed Cache 7.9.1 on 2026-10-13 13:45:51 -->
