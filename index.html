@@ -683,7 +683,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // 1. Corrección quirúrgica de textos y enlaces mailto sin romper el formulario
+    // 1. Corrección quirúrgica de textos y enlaces mailto (MANTENIDO)
     document.querySelectorAll('a').forEach(function(link) {
       if (link.href && link.href.includes('contacto@macpcclinic.com')) {
         link.href = link.href.replace('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
@@ -700,20 +700,8 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
         el.textContent = el.textContent.replace('contacto@macpcclinic.com', 'reparamacypc@gmail.com');
       }
     });
-
-    // 2. Blindaje total contra el Error 405 (Forzar envío directo a Web3Forms)
-    var miFormulario = document.querySelector('form');
-    if (miFormulario) {
-      // Nos aseguramos de que apunte directamente a la API externa
-      miFormulario.setAttribute('action', 'https://web3forms.com');
-      miFormulario.setAttribute('method', 'POST');
-      
-      miFormulario.addEventListener('submit', function(e) {
-        // Permitimos el envío normal hacia la URL externa configurada arriba
-        e.stopPropagation();
-      });
-    }
   });
 </script>
+
 
 </html><!-- Page cached by LiteSpeed Cache 7.9.1 on 2026-10-13 13:45:51 -->
