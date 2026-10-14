@@ -707,5 +707,15 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector('form[action*="web3forms.com"]');
+    if (form) {
+      form.addEventListener('submit', function() {
+        alert("¡Formulario enviado correctamente! Nos comunicaremos contigo a la brevedad.");
+      });
+    }
+  });
+</script>
 
 </html><!-- Page cached by LiteSpeed Cache 7.9.1 on 2026-10-13 13:45:51 -->
