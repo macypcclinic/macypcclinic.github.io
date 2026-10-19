@@ -7,41 +7,6 @@
 <title>MAC&amp;PC CLINIC – Reparación y mantenimiento de MacBook y PC.</title>
 
 
-<!-- BOTÓN ARRIBA ESTILO PRINCIPIO -->
-
-<meta charset="UTF-8">
-  <title>Mac & PC Clinic</title>
-  
-  <style>
-    /* ... Tus otros estilos existentes ... */
-
-    /* AQUÍ PEGAS LOS ESTILOS DEL BOTÓN */
-    #scrollTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 99;
-      border: none;
-      outline: none;
-      background-color: #e5e5ea;
-      color: #1c1c1e;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 1;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: all 0.2s ease-in-out;
-    }
-  </style>
-
-<!-- BOTÓN ARRIBA ESTILO FIN -->
-
-
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
@@ -716,32 +681,6 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
-<!-- AQUÍ PEGAS EL BOTÓN PARA SUBIR -->
-    <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">⌃</button>
-<!-- AQUÍ PEGAS EL BOTÓN PARA SUBIR -->
-<!-- Tu botón HTML -->
-    <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">⌃</button>
-
-    <!-- AQUÍ PEGAS EL SCRIPT DE JAVASCRIPT -->
-    <script>
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-      window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-          scrollTopBtn.style.display = "block";
-        } else {
-          scrollTopBtn.style.display = "none";
-        }
-      };
-
-      scrollTopBtn.addEventListener("click", function() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      });
-    </script>
-  <!-- Tu botón HTML -->
 
   </body>
 
