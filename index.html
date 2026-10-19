@@ -681,6 +681,52 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
+<!-- ESTILOS CSS DEL BOTÓN -->
+<style>
+  #scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  #scrollTopBtn img {
+    width: 30px; /* Ajusta el tamaño si la prefieres un poco más grande o chica */
+    height: auto;
+    display: block;
+  }
+</style>
+
+<!-- BOTÓN CON TU IMAGEN ORIGINAL -->
+<button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">
+  <img src="wp-content/uploads/2025/11/arrow_15227672-1.png" alt="Volver arriba">
+</button>
+
+<!-- SCRIPT DE JAVASCRIPT -->
+<script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+
+  scrollTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 
   </body>
 
